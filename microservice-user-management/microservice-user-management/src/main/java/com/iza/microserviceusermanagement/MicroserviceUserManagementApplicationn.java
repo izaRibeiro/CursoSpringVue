@@ -4,10 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroserviceUserManagementApplication {
-
+public class MicroserviceUserManagementApplicationn {
 	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceUserManagementApplication.class, args);
+		SpringApplication.run(MicroserviceUserManagementApplicationn.class, args);
 	}
-
 }
