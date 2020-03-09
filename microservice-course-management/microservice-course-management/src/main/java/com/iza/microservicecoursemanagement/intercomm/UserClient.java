@@ -1,4 +1,4 @@
-package com.iza.microservicoursemanagement.intercomm;
+package com.iza.microservicecoursemanagement.intercomm;
 
 import java.util.List;
 
@@ -13,3 +13,4 @@ public interface UserClient {
 	@RequestMapping(method = RequestMethod.POST, value = "/service/names", consumes = "application/json")
 	List<String> getUserNames(@RequestBody List<Long> userList);
 }
+

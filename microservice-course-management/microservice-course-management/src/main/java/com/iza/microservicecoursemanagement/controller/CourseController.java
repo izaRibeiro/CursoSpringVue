@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.iza.microservicecoursemanagement.intercomm.UserClient;
 import com.iza.microservicecoursemanagement.model.Transaction;
 import com.iza.microservicecoursemanagement.service.CourseService;
-import com.iza.microservicoursemanagement.intercomm.UserClient;
 
 @RestController
 public class CourseController {
@@ -36,7 +36,7 @@ public class CourseController {
 	@Autowired
 	private Environment environment;
 	
-	@Value("${spring.aplication.name}")
+	@Value("${spring.application.name}")
 	private String serviceId;
 	
 	@GetMapping("/service/port")

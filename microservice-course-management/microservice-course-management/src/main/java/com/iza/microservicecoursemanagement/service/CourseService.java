@@ -3,12 +3,14 @@ package com.iza.microservicecoursemanagement.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.iza.microservicecoursemanagement.model.Course;
 import com.iza.microservicecoursemanagement.model.Transaction;
 import com.iza.microservicecoursemanagement.repository.CourseRepository;
 import com.iza.microservicecoursemanagement.repository.TransactionRepository;
 
+@Service
 public class CourseService {
 	
 	@Autowired
