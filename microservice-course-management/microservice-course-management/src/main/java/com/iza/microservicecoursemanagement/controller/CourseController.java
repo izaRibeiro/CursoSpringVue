@@ -4,7 +4,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.core.env.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
@@ -27,6 +30,24 @@ public class CourseController {
 	@Autowired
 	private CourseService courseService;
 	
+	@Autowired
+	private DiscoveryClient discoveryClient;
+	
+	@Autowired
+	private Environment environment;
+	
+	@Value("${spring.aplication.name}")
+	private String serviceId;
+	
+	@GetMapping("/service/port")
+	public String getPort() {
+		return "Service is working at port: " + environment.getProperty("local.server.port");
+	}
+	
+	@GetMapping("/service/instances")
+	public ResponseEntity<?> getInstances(){
+		return ResponseEntity.ok(discoveryClient.getInstances(serviceId));
+	}
 	@GetMapping("/service/user/{userId}")
 	public ResponseEntity<?> findTransactionsOfUser(@PathVariable Long userId){
 		return ResponseEntity.ok(courseService.findTransactionsOfUser(userId));
