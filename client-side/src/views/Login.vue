@@ -12,21 +12,21 @@
             name="username" v-model="user.username"
             v-validate="required" />
 
-            <div class="alert alert-danger"
+            <!--<div class="alert alert-danger"
                 role="alert" v-if="errors.has('username')">
                 Username is required!
-            </div>
+            </div>-->
 
             <div class='form-group'></div>
             <label for="password"> Password </label>
-            <input type="text" class="form-control"
+            <input type="password" class="form-control"
             name="password" v-model="user.password"
             v-validate="required" />
 
-            <div class="alert alert-danger"
+            <!--<div class="alert alert-danger"
                 role="alert" v-if="errors.has('password')">
                 Password is required!
-            </div>
+            </div>-->
             <div class="form-group">
                 <button class="btn btn-primary btn-block"
                 :disabled="loading"> <span>Login</span> </button>
