@@ -59,13 +59,14 @@ public class UserController {
 		return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/service/login")
-	public ResponseEntity<?> getUser(Principal principal){
-		if(principal == null || principal.getName() == null) {
-			return new ResponseEntity<>(HttpStatus.OK);
-		}
-		return ResponseEntity.ok(userService.findByUsername(principal.getName()));
-	}
+   @GetMapping("/service/login")
+    public ResponseEntity<?> getUser(Principal principal){
+        if(principal == null || principal.getName() == null){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        //return ResponseEntity.ok(userService.findByUsername(principal.getName()));
+        return new ResponseEntity<>(userService.findByUsername(principal.getName()), HttpStatus.OK);
+    }
 	
 	@PostMapping("/service/names")
 	public ResponseEntity<?> getNamesOfUsers(@RequestBody List<Long> idList){

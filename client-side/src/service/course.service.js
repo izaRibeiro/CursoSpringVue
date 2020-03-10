@@ -12,9 +12,9 @@ class CourseService {
         {headers : {'Content-Type' : 'application/json; charset-UTF-8'}});
     }
 
-    filterStudents(course){
-        return axios.get(API_URL + 'course/' + courseId, 
-        {headers : {'Content-Type' : 'application/json; charset-UTF-8'}});
+    filterStudents(courseId) {
+        return axios.get(API_URL + 'course/' + courseId,
+        {headers: {'Content-Type':'application/json; charset=UTF-8'}});
     }
 
     findAllCourses(){
