@@ -1,4 +1,4 @@
-import { User } from '../model/User';
+//import { User } from '../model/User';
 import axios from 'axios';
 import { BehaviorSubject} from 'rxjs';
 
@@ -16,7 +16,7 @@ class UserService {
 
     login(user){
         const headers = {
-            authorization: 'Basic ' + btoa(user.username + ':' + user.password);
+            authorization: 'Basic ' + btoa(user.username + ':' + user.password),
         }
 
         return axios.get(API_URL + 'login', {headers: headers}).then(response => {
@@ -26,7 +26,7 @@ class UserService {
     }
 
     logOut(){
-        return axios.post(API_URL + 'logout', {}).then(response => {
+        return axios.post(API_URL + 'logout', {}).then(() => {
             localStorage.removeItem('currentUser');
             currentUserSubject.next(null);
         });
