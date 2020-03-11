@@ -10,8 +10,8 @@
             <label for="username"> Username</label>
             <input type="text" class="form-control"
             name="username" v-model="user.username"
-            v-validate="required" />
-
+           />
+            <!--  v-validate="required"  -->
             <!--<div class="alert alert-danger"
                 role="alert" v-if="errors.has('username')">
                 Username is required!
@@ -22,7 +22,7 @@
             <input type="password" class="form-control"
             name="password" v-model="user.password"
             v-validate="required" />
-
+<!--  v-validate="required"  -->
             <!--<div class="alert alert-danger"
                 role="alert" v-if="errors.has('password')">
                 Password is required!

@@ -58,9 +58,10 @@
         },
         created(){
             this.currentUser = UserService.currentUserValue;
-            if(!this.currentUser){
+            /*if(!this.currentUser){
                 this.$router.push('/login');
             }
+            */
 
             CourseService.filterTransactions(this.currentUser.id).then(trans =>{
                 this.transactions = trans.data;
