@@ -72,7 +72,7 @@
         },
         methods: {
             handleRegister(){
-                this.loading = true;
+                this.loading = false;
                 //this.$validator.validateAll();
                 /*if(this.errors.any){
                     this.loading = false;

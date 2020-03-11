@@ -27,10 +27,10 @@
                 <td>{{item.title}}</td>
                 <td>{{item.author}}</td>
                 <td>
-                  <button class="btn btn-info" @click="detail(item)">Detail</button>
+                  <button class="btn btn-info" @click="detail(item)">Detalhes</button>
                 </td>
                 <td>
-                  <button class="btn btn-success" @click="enroll(item)">Enroll</button>
+                  <button class="btn btn-success" @click="enroll(item)">Inscrição</button>
                 </td>
               </tr>
             </tbody>

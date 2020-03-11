@@ -2,7 +2,7 @@
 <div class="container">
     <header class="jumbotron">
         <h1 class="display-3">
-            <strong>{{currentUser.name}}</strong> Welcome to my app.
+            <strong>{{currentUser.name}}</strong> Bem vindo :D
         </h1>
     </header>
     <a class="btn btn-link log-out" @click="logOut">LogOut</a>
@@ -58,10 +58,10 @@
         },
         created(){
             this.currentUser = UserService.currentUserValue;
-            /*if(!this.currentUser){
+            if(!this.currentUser){
                 this.$router.push('/login');
             }
-            */
+            
 
             CourseService.filterTransactions(this.currentUser.id).then(trans =>{
                 this.transactions = trans.data;

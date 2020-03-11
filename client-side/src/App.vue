@@ -8,7 +8,7 @@
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <a href="/home" class="nav-link">
-            <font-awesome-icon icon="home"/> Home
+            Home
           </a>
         </li>
       </div>
@@ -16,12 +16,12 @@
       <div class="navbar-nav ml-auto" v-if="!currentUser">
         <li class="nav-item">
           <a href="/register" class="nav-link">
-            <font-awesome-icon icon="user"/> Sign Up
+            Sign Up
           </a>
         </li>
         <li class="nav-item">
           <a href="/login" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt"/> Login
+            Login
           </a>
         </li>
       </div>
@@ -34,7 +34,7 @@
         </li>
         <li class="nav-item">
           <a @click="logOut" class="nav-link">
-            <font-awesome-icon icon="sign-out-alt"/> LogOut
+            LogOut
           </a>
         </li>
       </div>

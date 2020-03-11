@@ -21,7 +21,7 @@
             <label for="password"> Password </label>
             <input type="password" class="form-control"
             name="password" v-model="user.password"
-            v-validate="required" />
+            />
 <!--  v-validate="required"  -->
             <!--<div class="alert alert-danger"
                 role="alert" v-if="errors.has('password')">
@@ -31,7 +31,7 @@
                 <button class="btn btn-primary btn-block"
                 :disabled="loading"> <span>Login</span> </button>
                 <span class="spinner-border spinner-border-sm"
-                v-show="loaging"></span>
+                v-show="loading"></span>
                 
             </div>
         </form>
@@ -59,11 +59,11 @@
         methods: {
             handleLogin(){
                 this.loading = true;
-                this.$validator.validateAll();
+                /*this.$validator.validateAll();
                 if(this.errors.any){
                     this.loading = false;
                     return ;
-                }
+                }*/
                 UserService.login(this.user).then(
                 data => {
                     console.log(data);
